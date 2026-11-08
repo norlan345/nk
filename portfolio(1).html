@@ -443,6 +443,11 @@ html.q2 .floor::before { animation: none; will-change: auto; }
 html.q2 .gl::before, html.q2 .gl::after { animation: none; }
 html.q2 .scan { display: none; }
 
+/* evita el desbordamiento horizontal en móvil (las tarjetas entran desde los lados) */
+html { overflow-x: hidden; }
+body { overflow-x: hidden; overflow-x: clip; }
+main, section, .stats, footer { overflow-x: clip; }
+
 /* ───────────── WHATSAPP FLOTANTE ───────────── */
 .wa { position: fixed; z-index: 80; width: 58px; height: 58px;
   right: calc(16px + env(safe-area-inset-right, 0px)); bottom: calc(16px + env(safe-area-inset-bottom, 0px));
